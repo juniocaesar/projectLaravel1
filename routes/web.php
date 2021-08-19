@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\C_Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/login', function () {
-    return view('v_login');
-});
-Route::get('/dashboard', function () {
-    return view('v_dashboard');
-});
-Route::get('/daftar_mesin', function () {
-    return view('v_daftar_mesin');
+Route::get('/login', [C_Login::class, 'loginView']);
+Route::post('/login_auth', [C_Login::class, 'loginAuth']);
+Route::get('/dashboard/super_admin', function () {
+    return view('super_admin/V_Dashboard_Super_Admin');
 });
