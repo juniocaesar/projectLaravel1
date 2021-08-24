@@ -2,7 +2,7 @@
 
 After cloning or pulling this project, you need to run these command on your command prompt first:
 1. composer update
-2. php artisan db:create
+2. php artisan db:create mesin
 3. php artisan migrate
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
