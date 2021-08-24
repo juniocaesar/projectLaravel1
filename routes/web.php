@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect('/login');
+});
 
 Route::get('/login', [C_Login::class, 'loginView']);
 Route::post('/login_auth', [C_Login::class, 'loginAuth']);
