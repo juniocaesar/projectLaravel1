@@ -4,37 +4,36 @@
 
 @section('adminlte_css_pre')
 <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
 @stop
 
-@php( $login_url = View::getSection('login_url') ?? config('adminlte.login_url', 'login') )
-@php( $register_url = View::getSection('register_url') ?? config('adminlte.register_url', 'register') )
-@php( $password_reset_url = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', 'password/reset') )
+@section('auth_body')
 
-@if (config('adminlte.use_route_url', false))
-@php( $login_url = $login_url ? route($login_url) : '' )
-@php( $register_url = $register_url ? route($register_url) : '' )
-@php( $password_reset_url = $password_reset_url ? route($password_reset_url) : '' )
-@else
-@php( $login_url = $login_url ? url($login_url) : '' )
-@php( $register_url = $register_url ? url($register_url) : '' )
-@php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
+<script>
+    var toastLiveExample = document.getElementById('liveToast')
+    var toast = new bootstrap.Toast(toastLiveExample)
+</script>
+
+@if (session('error'))
+<script>
+    toast.show()
+</script>
 @endif
 
-@section('auth_body')
 <form action="/login_auth" method="POST">
     @csrf
     <div class="input-group mb-3">
+
+        {{-- Username field --}}
         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Masukkan Username" autofocus>
         <div class="input-group-append">
             <div class="input-group-text">
                 <span class="fas fa-user"></span>
             </div>
         </div>
-        @if($errors->has('email'))
-        <div class="invalid-feedback">
-            <strong>{{ $errors->first('email') }}</strong>
-        </div>
-        @endif
         @error('username')
         <div class="invalid-feedback">
             <b>{{ $message }}</b>
@@ -74,4 +73,17 @@
     </div>
 
 </form>
+
 @stop
+
+{{-- Toast Message --}}
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+    <div class="toast align-items-center text-white bg-danger border-0" data-delay="3000" role="alert" aria-live="assertive" id="liveToast" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <b>{{ session('error') }}</b>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>

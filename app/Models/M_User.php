@@ -13,7 +13,11 @@ class M_User extends Model
     protected $table = 'master_user';
 
     public function getCredential($username, $password) {
-        $db_result = $this::where('mu_username', $username)->where('mu_password', $password)->get();
+        $db_result = $this::where('mu_username', $username)
+                    ->where('mu_password', $password)
+                    ->where('mu_status', '1')
+                    ->get();
+                    
         return $db_result;
     }
 }

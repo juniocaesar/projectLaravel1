@@ -223,7 +223,41 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
-
+    'menu1' => [
+        // Navbar items:
+        [
+            'type'         => 'navbar-search',
+            'text'         => 'search',
+            'topnav_right' => true,
+        ],
+        [
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
+    
+        // Sidebar items:
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
+        [
+            'text'        => 'Dasborsssss',
+            'url'         => 'admin/pages',
+            'icon'        => 'fa fa-home',
+        ],
+        [
+            'text'        => 'Daftar Mesinsss',
+            'url'         => 'admin/pages',
+            'icon'        => 'fa fa-table',
+        ],
+        [
+            'text'        => 'Tentangsss',
+            'url'         => 'admin/pages',
+            'icon'        => 'fa fa-question-circle',
+        ],
+    ],
+    
     'menu' => [
         // Navbar items:
         [
@@ -235,7 +269,7 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
+    
         // Sidebar items:
         // [
         //     'text' => 'blog',
