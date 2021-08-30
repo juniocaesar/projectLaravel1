@@ -1,6 +1,6 @@
 <?php
 
-return [
+$config = [
 
     /*
     |--------------------------------------------------------------------------
@@ -223,43 +223,9 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
     |
     */
-    'menu1' => [
-        // Navbar items:
-        [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
     
-        // Sidebar items:
-        // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        [
-            'text'        => 'Dasborsssss',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-home',
-        ],
-        [
-            'text'        => 'Daftar Mesinsss',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-table',
-        ],
-        [
-            'text'        => 'Tentangsss',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-question-circle',
-        ],
-    ],
-    
+    // 'menu' => ($MODE == 'superadmin') ? $SUPER_ADMIN_MENU : $ADMIN_MENU,
     'menu' => [
-        // Navbar items:
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
@@ -268,94 +234,7 @@ return [
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
-        ],
-    
-        // Sidebar items:
-        // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        [
-            'text'        => 'Dasbor',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-home',
-        ],
-        [
-            'text'        => 'Daftar Mesin',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-table',
-        ],
-        [
-            'text'        => 'Tentang',
-            'url'         => 'admin/pages',
-            'icon'        => 'fa fa-question-circle',
-        ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
+        ]
     ],
 
     /*
@@ -478,3 +357,5 @@ return [
 
     'livewire' => false,
 ];
+
+return $config;
